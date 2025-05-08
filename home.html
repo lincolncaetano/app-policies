@@ -45,9 +45,37 @@
       color: #888;
       font-size: 14px;
     }
+    .tiktok-button {
+      display: inline-block;
+      background-color: #000;
+      color: #fff;
+      font-weight: bold;
+      padding: 12px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 16px;
+      transition: background 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      font-family: 'Arial', sans-serif;
+    }
+    
+    .tiktok-button:hover {
+      background-color: #ff2d55;
+    }
+    
+    .tiktok-logo {
+      margin-right: 8px;
+      font-size: 18px;
+    }
   </style>
 </head>
 <body>
+
+  <nav>
+    <a href="privacy-policy.html">Política de Privacidade</a>
+    <a href="terms-of-service.html">Termos de Serviço</a>
+  </nav>
+  
   <header>
     <h1>Megafoll-Uploader</h1>
     <p>Automatize a publicação de vídeos no Instagram Reels e TikTok</p>
@@ -69,10 +97,12 @@
       Utilizamos autenticação segura via OAuth para garantir que seus dados estejam protegidos. Você pode revogar o acesso a qualquer momento.
     </p>
 
-    <nav>
-      <a href="privacy-policy.html">Política de Privacidade</a>
-      <a href="terms-of-service.html">Termos de Serviço</a>
-    </nav>
+    <a href="https://open.tiktokapis.com/platform/oauth/connect/?client_key=sbaw49e0dn0o5z33o8&scope=user.info.basic,video.publish,video.upload&redirect_uri=https://n8n.lcdsoft.com.br/webhook-test/tiktok-callback&response_type=code"
+       class="tiktok-button">
+      <span class="tiktok-logo">🎵</span> Conectar com TikTok
+    </a>
+
+    
   </main>
 
   <footer>
