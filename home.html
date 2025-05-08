@@ -97,8 +97,7 @@
       Utilizamos autenticação segura via OAuth para garantir que seus dados estejam protegidos. Você pode revogar o acesso a qualquer momento.
     </p>
 
-    <a href="https://open.tiktokapis.com/platform/oauth/connect/?client_key=sbaw49e0dn0o5z33o8&scope=user.info.basic,video.publish,video.upload&redirect_uri=https://n8n.lcdsoft.com.br/webhook-test/tiktok-callback&response_type=code"
-       class="tiktok-button">
+    <a id="tiktokLoginBtn" class="tiktok-button" target="_blank">
       <span class="tiktok-logo">🎵</span> Conectar com TikTok
     </a>
 
@@ -108,5 +107,25 @@
   <footer>
     &copy; 2025 Megafoll-Uploader. Todos os direitos reservados.
   </footer>
+
+    <script>
+    const clientKey = 'sbaw49e0dn0o5z33o8';
+    const redirectUri = encodeURIComponent('https://n8n.lcdsoft.com.br/webhook-test/tiktok-callback');
+
+    function gerarStateAleatorio(tamanho = 16) {
+      const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      let resultado = '';
+      for (let i = 0; i < tamanho; i++) {
+        resultado += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+      }
+      return resultado;
+    }
+
+    const state = gerarStateAleatorio();
+    const authUrl = `https://open.tiktokapis.com/platform/oauth/connect/?client_key=${clientKey}&scope=user.info.basic,video.upload&redirect_uri=${redirectUri}&response_type=code&state=${state}`;
+
+    document.getElementById('tiktokLoginBtn').href = authUrl;
+  </script>
+  
 </body>
 </html>
