@@ -122,7 +122,7 @@
     }
 
     const state = gerarStateAleatorio();
-    const authUrl = `https://open.tiktokapis.com/platform/oauth/connect/?client_key=${clientKey}&scope=user.info.basic,video.upload&redirect_uri=${redirectUri}&response_type=code&state=${state}`;
+    const authUrl = `https://www.tiktok.com/v2/auth/authorize/?client_key=${clientKey}&scope=user.info.basic,video.upload&redirect_uri=${redirectUri}&response_type=code&state=${state}`;
 
     document.getElementById('tiktokLoginBtn').href = authUrl;
   </script>
